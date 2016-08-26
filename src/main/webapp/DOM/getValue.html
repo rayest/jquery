@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+
+        // 获取数据
+        function getValue() {
+            var userName = $("#userName").val();
+            alert(userName);
+        }
+
+        // 设置数据
+        function setValue() {
+            $("#userName").val("裴甜");
+        }
+
+    </script>
+</head>
+<body>
+<input type="text" id="userName" name="userName"/>
+<input type="button" value="获取数据" onclick="getValue()"/>
+<input type="button" value="设置数据" onclick="setValue()"/>
+</body>
+</html>

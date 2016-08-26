@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#b1").click(function () {
+//                jQueryAjax 的 load方法
+//                load(url, data, callback函数)
+                $("#d1").load("/ajax?action=load", {name:"Ray", age:22}, function(){
+                    alert("执行完成！");
+                });
+            });
+
+            $("#b2").click(function () {
+//                post 也可以换成 get，只是安全性等性能不好
+                $.post("/ajax?action=post", {id:1}, function (data, textStatus) {
+                    alert("请求状态：" + textStatus);
+                    alert("返回数据：" + data);
+                    data = eval("("+data+")");
+                    $("#name").val(data.name);
+                    $("#age").val(data.age);
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+<input id="b1" type="button" value="load加载" />
+<div id="d1"></div>
+<hr/>
+<input id="b2" type="button" value="POST/GET加载" />
+姓名：<input type="text" id="name" />
+年龄：<input type="text" id="age" />
+</body>
+</html>

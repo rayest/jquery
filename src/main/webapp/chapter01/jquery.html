@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script type="text/javascript">
+         $(document).ready(function () {              // 1. 文档加载完成后准备执行 function 函数
+             $("#contentButton").click(function () {  // 2. 以 jquery 的语法形式执行点击事件的函数
+                 alert($("#content").val());          // 3. 点击事件发生后，执行 function 函数，其函数作用是弹出一条内容
+                                                      // 4. 该内容由 jquery 语法获取
+                                                      // 5. jquery 语法获取对象的方法是在美元符号内引用 #id
+             });
+         });
+    </script>
+</head>
+<body>
+<input type="text" id="content" />&nbsp;
+<input type="button" id="contentButton" value="获取内容" />
+
+</body>
+</html>

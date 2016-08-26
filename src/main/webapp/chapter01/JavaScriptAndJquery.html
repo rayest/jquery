@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+
+        // 1. javascript 的方法获取表单数据
+        function getContentByJavaScript() {
+            var contentOfJavaScript = document.getElementById("contentOfJavaScript").value;
+            alert(contentOfJavaScript);
+        }
+
+        // 2. jquery 方法获取表单数据
+        function getContentByJquery() {
+            var contentOfJquery = $("#contentOfJquery").val();
+            alert(contentOfJquery);
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="contentOfJavaScript" />&nbsp;&nbsp;
+<input type="button" value="JavaScript 获取内容" onclick="getContentByJavaScript()" />
+<br/>
+<input type="text" id="contentOfJquery" />&nbsp;&nbsp;
+<input type="button" value="Jquery 获取内容" onclick="getContentByJquery()" />
+</body>
+</html>

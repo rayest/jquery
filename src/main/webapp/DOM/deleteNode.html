@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="css.css"/>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 删除节点
+            $("ul li:eq(1)").remove();
+         });
+    </script>
+</head>
+<body>
+<p>你最喜欢的名人是？</p>
+<ul>
+    <li title="这是乔布斯"><font color="green">乔布斯</font></li>
+    <li title="这是比尔盖茨" class="lc">比尔盖茨</li>
+    <li title="这是詹姆斯高斯林">詹姆斯高斯林</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#b2").click(function () {
+                $("#p1").hide();
+            });
+
+            $("#b1").click(function () {
+                $("#p1").show();
+            });
+
+            // 淡出
+            $("#b3").click(function () {
+                $("#d1").fadeOut();
+            });
+
+            // 淡入
+            $("#b4").click(function () {
+                $("#d1").fadeIn();
+            });
+
+            // 不限次淡出淡入，500ms
+            $("#b5").click(function () {
+                $("#d1").fadeToggle(500);
+            });
+
+            //设置变化到不同的透明度
+            $("#b6").click(function () {
+                $("#d1").fadeTo("slow", 0.1);
+                $("#d2").fadeTo("slow", 0.5);
+                $("#d3").fadeTo("slow", 0.9);
+            });
+
+            // 缓慢下滑
+            $("#b8").click(function () {
+                $("#d4").slideDown("slow");
+
+            });
+
+            // 缓慢上滑
+            $("#b7").click(function () {
+                $("#d4").slideUp("slow");
+
+            });
+
+            // 简单的定义动画效果：缓慢左移500px距离
+            $("#b9").click(function () {
+                $("#d5").animate({left: '500px'}, 'slow');
+
+            });
+
+            // d动画效果：左移，透明度，高度和宽度都有了变化
+            $("#b10").click(function () {
+                $("#d5").animate({
+                    left: '500px',
+                    opacity: 0.5,
+                    height: '150px',
+                    width: '150'
+                }, 'slow');
+
+            });
+
+            // 每次点击都会使得动画对象的值变化，这里的变化是，每次点击div中定义的矩形，其高度和宽度都将增加150px
+            $("#b11").click(function () {
+                $("#d5").animate({
+                    left: '500px',
+                    opacity: 0.5,
+                    height: '+=150px',
+                    width: '+=150'
+                }, 'slow');
+
+            });
+
+            // 回调事件：函数执行完，再弹出 alert
+            $("#b12").click(function () {
+                $("#p2").show(function () {
+                    alert("小日本出来了");
+                });
+            });
+
+            // 以下两个一起使用，在执行左移时，点击停止键，将立即停止移动
+            $("#b13").click(function () {
+                $("#d6").animate({left: '500px'}, 'slow');
+
+            });
+
+            $("#b14").click(function () {
+                $("#d6").stop();
+
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="出来" id="b1"/>
+<input type="button" value="滚" id="b2"/>
+<p id="p1">日本</p>
+<hr/>
+<input type="button" value="淡出" id="b3"/>
+<input type="button" value="淡入" id="b4"/>
+<input type="button" value="淡入淡出开关" id="b5"/>
+<input type="button" value="透明度" id="b6"/>
+<div id="d1" style="width: 100px; height: 100px; background-color: red; margin: 10px;"></div>
+<div id="d2" style="width: 100px; height: 100px; background-color: green; margin: 10px;"></div>
+<div id="d3" style="width: 100px; height: 100px; background-color: blue; margin: 10px;"></div>
+<hr/>
+<input type="button" value="上滑" id="b7"/>
+<input type="button" value="下滑" id="b8"/>
+<div id="d4" style="background-color: gray; display:none; height: 100px; width: 500px;">
+    <p>Ray and Pay</p>
+    <p>Candy and Lee</p>
+</div>
+<hr/>
+<input type="button" value="左移" id="b9"/>
+<input type="button" value="动画效果2" id="b10"/>
+<input type="button" value="动画效果3" id="b11"/>
+<div id="d5" style="background-color: red; width: 100px; height: 100px; margin: 10px; position: absolute;"></div>
+<hr/>
+<input type="button" value="回调事件" id="b12"/>
+<p id="p2" style="display: none">日本</p>
+<hr/>
+<input type="button" value="向左移动" id="b13">
+<input type="button" value="停止" id="b14"/>
+<div id="d6" style="background-color: red; width: 100px; height: 100px; margin: 10px; position: absolute;"></div>
+
+</body>
+</html>

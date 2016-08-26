@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 获取孩子节点
+            var children =  $("body").children();
+            alert(children.length);
+
+            // 遍历节点
+            var children = $("ul").children();
+            for(var i = 0; i < children.length; i++){
+                // 原生的 JS 方法
+                alert(children[i].innerHTML);
+                // 经过 jquery 包装的。二者等价
+                alert($(children[i]).html());
+            }
+
+            // next
+            var next = $("ul li:eq(0)").next();
+            alert(next.html());
+
+            // previous
+            var previous = $("ul li:eq(1)").prev();
+            alert(previous.html());
+        });
+
+    </script>
+</head>
+<body>
+<p>你最喜欢的名人是？</p>
+<ul>
+    <li title="这是乔布斯"><font color="green">乔布斯</font></li>
+    <li title="这是比尔盖茨" class="lc">比尔盖茨</li>
+    <li title="这是詹姆斯高斯林">詹姆斯高斯林</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css"/>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 获取 css 样式属性
+            var color = $("#pay").css("color");
+            alert(color);
+
+            // 设置 css 样式属性
+            $("#pay").css("color", "blue");
+
+        });
+    </script>
+</head>
+<body>
+<p id="pay" style="color: red">Pay is a nice girl</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="css.css"/>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 获取属性
+            var attr = $("ul li:eq(0)").attr("title");
+            alert(attr);
+
+            // 设置属性
+            $("ul li:eq(0)").attr("title", "修改后的乔布斯");
+            var attr_ed = $("ul li:eq(0)").attr("title");
+            alert(attr_ed);
+
+            // 删除属性
+            $("ul li:eq(0)").removeAttr("title");
+            var attr = $("ul li:eq(0)").attr("title");
+            alert(attr);
+        });
+
+    </script>
+</head>
+<body>
+<p>你最喜欢的名人是？</p>
+<ul>
+    <li title="这是乔布斯"><font color="green">乔布斯</font></li>
+    <li title="这是比尔盖茨" class="lc">比尔盖茨</li>
+    <li title="这是詹姆斯高斯林">詹姆斯高斯林</li>
+</ul>
+
+</body>
+</html>
